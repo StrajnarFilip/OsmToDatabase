@@ -25,7 +25,7 @@ namespace OsmToDatabase.Common
 
         public static double? TagDoubleValueByKey(this Node node, string tagKey)
         {
-            string? tagValue = node.TagValueByKey(tagKey);
+            string? tagValue = node.TagValueByKey(tagKey)?.Replace(",", ".");
             bool success = double.TryParse(tagValue, out double result);
             return success ? result : null;
         }
