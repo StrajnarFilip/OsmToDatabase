@@ -8,7 +8,7 @@ namespace OsmToDatabase.Common
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=10.8.0.4;Username=postgres;Database=peakdata");
+            optionsBuilder.UseNpgsql("Host=127.0.0.1;Username=postgres;Database=peakdata");
         }
     }
 
