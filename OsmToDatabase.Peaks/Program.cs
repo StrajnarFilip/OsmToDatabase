@@ -3,6 +3,7 @@ using OsmSharp.Streams;
 using OsmToDatabase.Common;
 
 OsmContext db = new OsmContext();
+long counter = 0;
 
 using (var fileStream = new FileInfo(args[0]).OpenRead())
 {
@@ -36,7 +37,14 @@ using (var fileStream = new FileInfo(args[0]).OpenRead())
                 Wikidata = node.TagValueByKey("wikidata")
             };
             await db.AddAsync(peak);
-            await db.SaveChangesAsync();
+            counter++;
+
+            if ((counter % 50_000) == 0)
+            {
+                Console.WriteLine($"{counter}: Saving another batch.");
+                await db.SaveChangesAsync();
+            }
         }
     }
+    await db.SaveChangesAsync();
 }
