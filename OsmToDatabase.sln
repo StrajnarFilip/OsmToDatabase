@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OsmToDatabase.Common", "OsmToDatabase.Common\OsmToDatabase.Common.csproj", "{F108E197-F0EF-4DF5-8E10-6244B5BC9EC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OsmToDatabase.Peaks", "OsmToDatabase.Peaks\OsmToDatabase.Peaks.csproj", "{B4BBEDA2-CD68-4E1B-A92D-B52BBF776316}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F108E197-F0EF-4DF5-8E10-6244B5BC9EC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F108E197-F0EF-4DF5-8E10-6244B5BC9EC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F108E197-F0EF-4DF5-8E10-6244B5BC9EC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F108E197-F0EF-4DF5-8E10-6244B5BC9EC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4BBEDA2-CD68-4E1B-A92D-B52BBF776316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4BBEDA2-CD68-4E1B-A92D-B52BBF776316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4BBEDA2-CD68-4E1B-A92D-B52BBF776316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4BBEDA2-CD68-4E1B-A92D-B52BBF776316}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
