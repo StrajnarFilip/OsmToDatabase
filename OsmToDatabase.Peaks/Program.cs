@@ -20,7 +20,7 @@ using (var fileStream = new FileInfo(args[0]).OpenRead())
             {
                 Id = node.Id.Value,
                 Version = node.Version.Value,
-                TimeStamp = node.TimeStamp.Value,
+                TimeStamp = node.TimeStamp.Value.ToUniversalTime(),
                 Longitude = node.Longitude.Value,
                 Elevation = node.TagDoubleValueByKey("ele"),
                 Prominence = node.TagDoubleValueByKey("prominence"),
