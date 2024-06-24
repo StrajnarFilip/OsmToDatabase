@@ -5,6 +5,7 @@ using OsmToDatabase.Common;
 OsmContext db = new OsmContext();
 long counter = 0;
 
+HashSet<string> naturalPeakFeatures = new HashSet<string> { "peak", "volcano" };
 
 using (var fileStream = new FileInfo(args[0]).OpenRead())
 {
@@ -13,7 +14,16 @@ using (var fileStream = new FileInfo(args[0]).OpenRead())
     {
         if (element is Node node)
         {
-            if (node.TagValueByKey("natural") != "peak")
+            string? naturalValue = node.TagValueByKey("natural");
+
+            // Skip if natural tag is missing.
+            if (naturalValue is null)
+            {
+                continue;
+            }
+
+            // Skip if the node is not a desired feature.
+            if (!naturalPeakFeatures.Contains(naturalValue))
             {
                 continue;
             }
