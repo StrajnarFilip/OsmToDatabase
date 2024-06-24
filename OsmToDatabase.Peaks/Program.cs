@@ -5,6 +5,7 @@ using OsmToDatabase.Common;
 OsmContext db = new OsmContext();
 long counter = 0;
 
+
 using (var fileStream = new FileInfo(args[0]).OpenRead())
 {
     var source = new PBFOsmStreamSource(fileStream);
@@ -13,6 +14,12 @@ using (var fileStream = new FileInfo(args[0]).OpenRead())
         if (element is Node node)
         {
             if (node.TagValueByKey("natural") != "peak")
+            {
+                continue;
+            }
+
+            // Skip if elevation is missing.
+            if (node.TagDoubleValueByKey("ele") is null)
             {
                 continue;
             }
